@@ -2,6 +2,7 @@ $white: #ffffff;
 $light-blue: #3774ff;
 $gray: #dddddd;
 $white-blue: #83a9ff;
+$track: #526ffb;
 
 .horizontal__slider {
   top: -10px;
@@ -35,8 +36,11 @@ $white-blue: #83a9ff;
 }
 .track {
   position: relative;
-  background: $gray;
-  &.track-0 {
-    background: $white-blue;
+  background-color: $track;
+  &:first-child {
+    background: gray;
+  }
+  &:nth-child(3) {
+    background: gray;
   }
 }
