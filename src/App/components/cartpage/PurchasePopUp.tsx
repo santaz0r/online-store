@@ -55,7 +55,7 @@ function PurchasePopUp({ setIsPurchasePopUpEnabled, setCart }: TProps) {
       value: '',
       placeholder: 'Enter adress',
       isValid: false,
-      reg: /^[a-zA-Z]{5,}(\s([a-zA-Z]){5,})(\s([a-zA-Z]){5,}){1,}$/,
+      reg: /^[a-zA-Z]{5,}(\s([a-zA-Z]){5,})(\s([a-zA-Z]){5,}){1,}/,
       errorMsg: '*invalid input, must be at least 3 words, 5 letters each',
     },
     email: {
