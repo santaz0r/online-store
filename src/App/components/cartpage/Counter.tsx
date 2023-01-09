@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { TCart } from '../../types/types';
 import styles from './Counter.module.scss';
 
@@ -20,20 +21,22 @@ function Counter({ totalItemPrice, listId, onIncrement, onDecrement, ...rest }: 
   return (
     <div className={styles.card}>
       <div className={styles.card__id}>#{listId}</div>
-      <div className={styles.card__body}>
-        <div className={styles.card__image}>
-          <img src={rest.thumbnail} alt={rest.title} />
-        </div>
-        <div className={styles.card__info}>
-          <h3 className={styles.card__title}>{rest.title}</h3>
-          <div className={styles.card__description}>{rest.description}</div>
-          <div className={styles.card__stats}>
-            <div>Price: ${rest.price}</div>
-            <div>Stock: {rest.stock} pcs.</div>
-            <div>Discount: {rest.discountPercentage}%</div>
+      <NavLink to={`/product-details/${rest.id}`}>
+        <div className={styles.card__body}>
+          <div className={styles.card__image}>
+            <img src={rest.thumbnail} alt={rest.title} />
+          </div>
+          <div className={styles.card__info}>
+            <h3 className={styles.card__title}>{rest.title}</h3>
+            <div className={styles.card__description}>{rest.description}</div>
+            <div className={styles.card__stats}>
+              <div>Price: ${rest.price}</div>
+              <div>Stock: {rest.stock} pcs.</div>
+              <div>Discount: {rest.discountPercentage}%</div>
+            </div>
           </div>
         </div>
-      </div>
+      </NavLink>
       <div className={styles.card__controls}>
         <div className={styles.card__buttons}>
           <button className={styles.control_btn} onClick={handleDecrement} type="button">
