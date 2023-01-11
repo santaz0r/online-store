@@ -66,9 +66,10 @@ function CartPage() {
   const itemsCrop = paginate(cart, currentPage, itemsOnPage);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setItemsOnPage(
-      !+e.currentTarget.value ? 1 : +e.currentTarget.value > cart.length ? cart.length : +e.currentTarget.value,
-    );
+    // setItemsOnPage(
+    //   !+e.currentTarget.value ? 1 : +e.currentTarget.value > cart.length ? cart.length : +e.currentTarget.value,
+    // );
+    setItemsOnPage(!+e.currentTarget.value ? 1 : +e.currentTarget.value);
     setSearchParams({ limit: e.currentTarget.value, page: pageQuery });
     if (+e.currentTarget.value === itemsCrop.length) setCurrentpage(1);
   };
