@@ -48,7 +48,7 @@ function DualSliderPrice({ products, query, setData, data, maxPrice, minPrice }:
       min={minPrice}
       max={maxPrice}
       minDistance={5}
-      step={10}
+      step={1}
       onChange={(values) => handleChange(values)}
     />
   );

@@ -48,7 +48,7 @@ function DualSliderStock({ products, query, setData, data, maxStock, minStock }:
       min={minStock}
       max={maxStock}
       minDistance={5}
-      step={10}
+      step={1}
       onChange={(values) => handleChange(values)}
     />
   );
