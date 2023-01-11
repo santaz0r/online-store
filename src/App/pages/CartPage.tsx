@@ -92,7 +92,7 @@ function CartPage() {
       <input
         className={styles.cart_input}
         type="number"
-        max={itemsCount}
+        max={99999}
         value={itemsOnPage}
         onChange={(e) => handleChange(e)}
       />
