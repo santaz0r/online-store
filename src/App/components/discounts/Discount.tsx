@@ -7,7 +7,7 @@ type Tprops = {
   discount: string;
   discounts: string[];
   setDiscounts: React.Dispatch<React.SetStateAction<string[]>>;
-}
+};
 
 function Discount({ discount, discounts, setDiscounts }: Tprops) {
   function handleDelete() {
@@ -17,8 +17,12 @@ function Discount({ discount, discounts, setDiscounts }: Tprops) {
   }
   return (
     <div className={styles.wrapper}>
-      <span>{discount} -{PROMOCODES[discount]}%</span>
-      <button className={styles.button} type="button" onClick={handleDelete}>delete</button>
+      <span>
+        {discount} -{PROMOCODES[discount]}%
+      </span>
+      <button className={styles.button} type="button" onClick={handleDelete}>
+        delete
+      </button>
     </div>
   );
 }
