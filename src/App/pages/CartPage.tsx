@@ -7,7 +7,7 @@ import Counter from '../components/cartpage/Counter';
 import { paginate } from '../utils/paginate';
 import Pagination from '../components/cartpage/Pagination';
 import styles from './CartPage.module.scss';
-import CartSummary from '../components/cartpage/CartSummary';
+import { CartSummary } from '../components/cartpage/CartSummary';
 import PurchasePopUp from '../components/cartpage/PurchasePopUp';
 
 function CartPage() {
