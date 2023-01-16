@@ -16,6 +16,58 @@ type TProps = {
   setCart: React.Dispatch<React.SetStateAction<TCart[]>>;
 };
 
+export const formData = {
+  name: {
+    value: '',
+    placeholder: 'Enter First and Last name',
+    isValid: false,
+    reg: /^[a-zA-Z]{3,}(\s([a-zA-Z]){3,}){1,}$/,
+    errorMsg: '*invalid input, must be at least 2 words, 3 letters each',
+  },
+  phone: {
+    value: '',
+    placeholder: 'Enter phone',
+    isValid: false,
+    reg: /^\+\d{9,20}$/,
+    errorMsg: '*invalid input, must start with "+" and be more than 9 numbers long',
+  },
+  adress: {
+    value: '',
+    placeholder: 'Enter adress',
+    isValid: false,
+    reg: /^[a-zA-Z]{5,}(\s([a-zA-Z]){5,})(\s([a-zA-Z]){5,}){1,}/,
+    errorMsg: '*invalid input, must be at least 3 words, 5 letters each',
+  },
+  email: {
+    value: '',
+    placeholder: 'Enter valid e-mail',
+    isValid: false,
+    reg: /^\S+@\S+\.\S+$/,
+    errorMsg: '*invalid input, must be valid e-mail adress',
+  },
+  creditcard: {
+    value: '',
+    placeholder: 'Enter credit card number',
+    isValid: false,
+    reg: /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/,
+    errorMsg: '*invalid input, must be 16 numbers long',
+  },
+  thru: {
+    value: '',
+    placeholder: '00/00',
+    isValid: false,
+    reg: /^(0[1-9]|1[0-2])\/(2[3-9]|[3-9][0-9])$/,
+    errorMsg: '*invalid input, must be valid date',
+  },
+  CVV: {
+    value: '',
+    placeholder: '000',
+    isValid: false,
+    reg: /^\d{3}$/,
+    errorMsg: '*invalid input, must be 3 digits',
+  },
+};
+
 function PurchasePopUp({ setIsPurchasePopUpEnabled, setCart }: TProps) {
   const [isPayed, setIsPayed] = useState(false);
   const [isAllValid, setIsAllValid] = useState(false);
@@ -36,57 +88,7 @@ function PurchasePopUp({ setIsPurchasePopUpEnabled, setCart }: TProps) {
       reg: RegExp;
       errorMsg: string;
     }
-  }>({
-    name: {
-      value: '',
-      placeholder: 'Enter First and Last name',
-      isValid: false,
-      reg: /^[a-zA-Z]{3,}(\s([a-zA-Z]){3,}){1,}$/,
-      errorMsg: '*invalid input, must be at least 2 words, 3 letters each',
-    },
-    phone: {
-      value: '',
-      placeholder: 'Enter phone',
-      isValid: false,
-      reg: /^\+\d{9,20}$/,
-      errorMsg: '*invalid input, must start with "+" and be more than 9 numbers long',
-    },
-    adress: {
-      value: '',
-      placeholder: 'Enter adress',
-      isValid: false,
-      reg: /^[a-zA-Z]{5,}(\s([a-zA-Z]){5,})(\s([a-zA-Z]){5,}){1,}/,
-      errorMsg: '*invalid input, must be at least 3 words, 5 letters each',
-    },
-    email: {
-      value: '',
-      placeholder: 'Enter valid e-mail',
-      isValid: false,
-      reg: /^\S+@\S+\.\S+$/,
-      errorMsg: '*invalid input, must be valid e-mail adress',
-    },
-    creditcard: {
-      value: '',
-      placeholder: 'Enter credit card number',
-      isValid: false,
-      reg: /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/,
-      errorMsg: '*invalid input, must be 16 numbers long',
-    },
-    thru: {
-      value: '',
-      placeholder: '00/00',
-      isValid: false,
-      reg: /^(0[1-9]|1[0-2])\/(2[3-9]|[3-9][0-9])$/,
-      errorMsg: '*invalid input, must be valid date',
-    },
-    CVV: {
-      value: '',
-      placeholder: '000',
-      isValid: false,
-      reg: /^\d{3}$/,
-      errorMsg: '*invalid input, must be 3 digits',
-    },
-  });
+  }>(formData);
   const [cardImg, setCardImg] = useState(cardImage);
 
   function handleConfirm(event: React.FormEvent<HTMLFormElement>) {
