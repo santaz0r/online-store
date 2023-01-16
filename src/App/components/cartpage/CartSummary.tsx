@@ -46,6 +46,4 @@ function CartSummary({ setIsPurchasePopUpEnabled, totalItems, totalPrice }: TPro
   );
 }
 
-// export default CartSummary;
-
 export { CartSummary, countDiscountPercent };
