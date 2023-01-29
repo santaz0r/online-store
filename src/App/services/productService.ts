@@ -16,15 +16,14 @@ async function getAllCategories(): Promise<string[]> {
 }
 
 async function getProductById(id: string | undefined) {
-  let result;
+  let result: Promise<TProduct> | 'not found' = 'not found';
   try {
-    result = await fetch(`https://dummyjson.com/products/${id}`);
-    if (!result.ok) {
-      return 'not found';
+    const responce = await fetch(`https://dummyjson.com/products/${id}`);
+    if (responce.ok) {
+      result = (await responce.json()) as Promise<TProduct>;
     }
-    result = await result.json();
-  } catch (error) {
-    console.log(123123123123123, error);
+  } catch {
+    console.log('never gonna happen');
   }
   return result;
 }

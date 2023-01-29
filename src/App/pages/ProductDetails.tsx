@@ -15,8 +15,8 @@ function ProductDetails() {
       [TCart[], React.Dispatch<React.SetStateAction<TCart[]>>, null, React.Dispatch<React.SetStateAction<boolean>>]
     >();
 
-  async function getData() {
-    const data = await getProductById(id);
+  async function getData(): Promise<void> {
+    const data: TProduct | 'not found' = await getProductById(id);
     setProduct(data);
     if (data === 'not found') {
       setCurrentImage('');
