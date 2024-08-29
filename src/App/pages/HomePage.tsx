@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { TProduct } from '../types/types';
+import { NewTypeCategory, TProduct } from '../types/types';
 import styles from './HomePage.module.scss';
 import ProductList from '../components/homepage/ProductList';
 import CategoriesList from '../components/homepage/CategoriesList';
@@ -16,7 +16,7 @@ import Size from '../components/homepage/Size';
 
 function HomePage() {
   const [products, setProducts] = useState<TProduct[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categories, setCategories] = useState<NewTypeCategory[]>([]);
   const brands = Array.from(new Set(products.map((i) => i.brand)));
 
   const [isCopied, setIsCopied] = useState(false);

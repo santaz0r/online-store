@@ -23,6 +23,11 @@ type TResponse = {
   products: TProduct[];
 };
 
+type NewTypeCategory = {
+  name: string;
+  slug: string;
+};
+
 type TQueryParams = {
   category: string[];
   brand: string[];
@@ -40,4 +45,4 @@ type SetURLSearchParams = (
   navigateOpts?: NavigateOptions,
 ) => void;
 
-export type { TProduct, TResponse, TQueryParams, SetURLSearchParams, TCart };
+export type { TProduct, TResponse, TQueryParams, SetURLSearchParams, TCart, NewTypeCategory };

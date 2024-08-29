@@ -42,7 +42,7 @@ function BrandsList({ products, brands, query, setData, data, wholeCount }: TPro
           return 0;
         })
         .map((brand) => (
-          <div className={listStyles.list__item} key={brand}>
+          <div className={listStyles.list__item} key={brand || 'kek'}>
             <input
               className={listStyles.item__checkbox}
               type="checkbox"
